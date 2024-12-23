@@ -1,0 +1,167 @@
+<!-- Header start -->
+<div *ngIf="AnonymousFlag">
+  <div class="row" style="background-color: rgb(57, 140, 75); color: white;">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-2">
+         <a routerLink="home">
+           <img src="assets\hospital.png"  style="width: 50px;">
+         </a></div>
+    
+        <div class="col-sm-10">
+          <div class="row" style="padding-top: 50px; text-align: center;">
+             <div class="col-sm-2">
+               <a style="color: white; font-size: 20px; text-decoration: none;" routerLink="home">Home</a>
+             </div>
+             <div class="col-sm-2">
+               <a style="color: white; font-size: 20px; text-decoration: none;" routerLink="login">Login</a>
+             </div>
+             <div class="col-sm-2">
+               <a style="color: white; font-size: 20px; text-decoration: none;" routerLink="about">About</a>
+             </div>
+             <div class="col-sm-2">
+               <a style="color: white; font-size: 20px; text-decoration: none;" routerLink="contact">Contact</a>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Header close --> 
+ 
+<!-- body START-->
+<div class="row">
+   <div class="col-sm-12">
+     <router-outlet></router-outlet>
+   </div>
+</div>
+ <!-- body end-->
+
+ <!-- footer START-->
+ <div class="row" style="background-color: rgb(159, 102, 48); color: white; padding: 20px 0; width: 100%;">
+   <div class="col-sm-12">
+     <div class="row">
+       <div class="col-sm-2"></div>
+       <div class="col-sm-5" style="display: flex; align-items: center; justify-content: center;">
+         <span>
+           <a style="color: white; text-decoration: none; font-size: 14px;" href="#">copyright HCLS "htpps://www.hcls.com"</a>
+         </span>
+       </div>
+       <div class="col-sm-5" style="display: flex; align-items: center; justify-content: center;">
+         <a href="https://www.facebook.com/" style="margin-right: 15px;">
+           <img style="width: 30px;" src="assets/fb.png"  alt="Facebook">
+         </a>
+         <a href="https://www.instagram.com/" style="margin-right: 15px;">
+           <img style="width: 30px;" src="assets/insta.png"  alt="Instagram">
+         </a>
+         <a href="https://x.com/">
+           <img style="width: 30px;" src="assets/twitter.png"alt="X">
+         </a>
+       </div>
+     </div>
+   </div>
+ </div>
+</div> 
+ 
+  <!-- footer end-->
+
+  
+
+
+  
+   <!-- Header start -->
+ <div *ngIf="SecureFlag">
+   <div class="row" style="background-color: rgb(44, 184, 107); color: white; width: 100%;">
+     <div class="col-sm-12">
+       <div class="row">
+         <div class="col-sm-2">
+           <a>
+             <img src="assets\hospital.png" style="width: 50px;">
+           </a>
+         </div>
+         <div class="col-sm-7">
+           <div class="row" style="padding-top: 50px; text-align: center;">
+             <div class="col-sm-4" style="color: white; font-size: 20px;">
+               <span>Name : Masrath </span>
+             </div>
+             <div class="col-sm-3" style="color: white; font-size: 20px;">
+               <span>Login time :6:00 PM</span>
+             </div>
+           </div>
+         </div>
+         <div class="col-sm-3" style="text-align: right; padding-top: 50px;">
+           <a style="color: white; font-size: 20px; text-decoration: none;" href="#">Logout</a>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- Header close -->
+ 
+   <!-- Content start -->
+   <div class="container-fluid d-flex" style="height: calc(100vh - 200px); width: 100%;">
+     <!-- Operational Container: Visible when OperationalFlag is true -->
+     <div *ngIf="OperationalFlag" class="d-flex" style="width: 100%;">
+       <!-- Left Side: 15% width for buttons -->
+       <div class="d-flex flex-column" style="width: 15%; background-color: rgb(54, 217, 154); color: white;">
+         <button class="btn btn-danger p-2 border" routerLink="adddoctor">Add Doctor</button>
+         <button class="btn btn-danger p-2 border" routerLink="addrecepnist">Add Respnist</button>
+         <button class="btn btn-danger p-2 border" routerLink="managedoctor">Manage Doctor</button>
+         <button class="btn btn-danger p-2 border" routerLink="managerecepnist">Manage Respnist</button>
+         <button class="btn btn-danger p-2 border" routerLink="addhelper">Add Helper</button>
+         <button class="btn btn-danger p-2 border" routerLink="addlab">Add Lab</button>
+         <button class="btn btn-danger p-2 border" routerLink="managehelper">Manage Helper </button>
+         <button class="btn btn-danger p-2 border" routerLink="managelab">Manage Lab</button>
+         <button class="btn btn-danger p-2 border" routerLink="oaprofile">Operation Profile</button>
+         
+       </div>
+ 
+       <!-- Right Side: 85% width for content -->
+       <div class="d-flex flex-column" style="width: 85%; background-color: rgb(244, 239, 239); margin: 10px;">
+         <router-outlet></router-outlet> 
+       </div>
+     </div>
+ 
+     <!-- Managerial Container: Visible when ManagerialFlag is true -->
+     <div *ngIf="ManagerialFlag" class="d-flex" style="width: 100%;">
+       <!-- Left Side: 15% width for buttons -->
+       <div class="d-flex flex-column" style="width: 15%; background-color: rgb(54, 217, 154); color: white;">
+         <button class="btn btn-primary p-2 border" routerLink="addoadmin">Add Operation Admin</button>
+         <button class="btn btn-primary p-2 border" routerLink="manageoadmin">Manage Operation Admin</button>
+         <button class="btn btn-primary p-2 border" routerLink="maprofile">Manager Profile</button>
+       </div>
+ 
+       <!-- Right Side: 85% width for content -->
+       <div class="d-flex flex-column" style="width: 85%; background-color: rgb(244, 239, 239); margin: 10px;">
+         <router-outlet></router-outlet> 
+       </div>
+     </div>
+   </div>
+   <!-- Content close -->
+ 
+   <!-- Footer start -->
+   <div class="row" style="background-color: rgb(240, 8, 182); color: white; padding: 20px 0; width: 100%;">
+     <div class="col-sm-12">
+       <div class="row">
+         <div class="col-sm-2"></div>
+         <div class="col-sm-5" style="display: flex; align-items: center; justify-content: center;">
+           <span>
+             <a style="color: white; text-decoration: none; font-size: 14px;" href="#">copyright HCLS "htpps://www.hcls.com"</a>
+           </span>
+         </div>
+         <div class="col-sm-5" style="display: flex; align-items: center; justify-content: center;">
+           <a href="https://www.facebook.com/" style="margin-right: 15px;">
+             <img style="width: 30px;" src="assets/fb.png"  alt="Facebook">
+           </a>
+           <a href="https://www.instagram.com/" style="margin-right: 15px;">
+             <img style="width: 30px;" src="assets/insta.png"  alt="Instagram">
+           </a>
+           <a href="https://x.com/">
+             <img style="width: 30px;" src="assets/twitter.png" alt="X">
+           </a>
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- Footer close -->
+ </div>
